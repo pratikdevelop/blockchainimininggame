@@ -1,11 +1,11 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setMenuOpen(!menuOpen);
+  // };
 
   return (
     <nav className="bg-gray-900 text-white p-4 shadow-md">
@@ -16,8 +16,8 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
-          <a href="" className="hover:text-gray-400 transition duration-200">
+        <div className="flex space-x-6">
+          {/* <a href="" className="hover:text-gray-400 transition duration-200">
             Home
           </a>
           <a href="game" className="hover:text-gray-400 transition duration-200">
@@ -28,20 +28,24 @@ const Navbar = () => {
           </a>
           <a href="contact" className="hover:text-gray-400 transition duration-200">
             Contact
-          </a>
+          </a> */}
+
+          <button className="absolute top-4 right-4 py-2 px-4 bg-blue-500 text-white rounded-lg">
+            Toggle Mode
+          </button>
         </div>
 
         {/* Mobile menu toggle */}
-        <div className="md:hidden">
+        {/* <div className="md:hidden">
           <button onClick={toggleMenu} className="text-2xl">
             <span role="img" aria-label="menu">
               🍔
             </span>
           </button>
-        </div>
+        </div> */}
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu
       {menuOpen && (
         <div className="md:hidden bg-gray-800 text-white p-4 space-y-4">
           <a href="" className="block hover:text-gray-400 transition duration-200">
@@ -57,7 +61,7 @@ const Navbar = () => {
             Contact
           </a>
         </div>
-      )}
+      )} */}
     </nav>
   );
 };

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
@@ -123,21 +123,34 @@ const MiningGame = () => {
   };
 
   return (
-    <div className={`flex flex-col items-center min-h-screen py-12 px-6 ${darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"}`}>
+    <div
+      className={`flex flex-col items-center min-h-screen py-12 px-6 ${
+        darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"
+      }`}
+    >
       {/* Dark/Light Mode Toggle Button */}
-      <button onClick={toggleDarkMode} className="absolute top-4 right-4 py-2 px-4 bg-blue-500 text-white rounded-lg">
+      <button
+        onClick={toggleDarkMode}
+        className="absolute top-4 right-4 py-2 px-4 bg-blue-500 text-white rounded-lg"
+      >
         Toggle {darkMode ? "Light" : "Dark"} Mode
       </button>
 
       <h1 className="text-4xl font-semibold mb-6">Blockchain Mining Game</h1>
 
       {/* Wallet Connection Button */}
-      <button onClick={connectWallet} className="mb-6 py-2 px-4 bg-green-500 text-white rounded-lg">
+      <button
+        onClick={connectWallet}
+        className="mb-6 py-2 px-4 bg-green-500 text-white rounded-lg"
+      >
         {walletAddress ? `Connected: ${walletAddress}` : "Connect Wallet"}
       </button>
 
       {/* Daily Reward Button */}
-      <button onClick={claimDailyReward} className="mb-6 py-2 px-4 bg-yellow-500 text-white rounded-lg">
+      <button
+        onClick={claimDailyReward}
+        className="mb-6 py-2 px-4 bg-yellow-500 text-white rounded-lg"
+      >
         Claim Daily Reward
       </button>
 
@@ -151,10 +164,18 @@ const MiningGame = () => {
 
         {/* Mining Buttons */}
         <div className="flex justify-between">
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg disabled:bg-gray-500" onClick={startMining} disabled={isMining || energy <= 0}>
+          <button
+            className="bg-blue-500 text-white py-2 px-4 rounded-lg disabled:bg-gray-500"
+            onClick={startMining}
+            disabled={isMining || energy <= 0}
+          >
             Start Mining
           </button>
-          <button className="bg-red-500 text-white py-2 px-4 rounded-lg" onClick={stopMining} disabled={!isMining}>
+          <button
+            className="bg-red-500 text-white py-2 px-4 rounded-lg"
+            onClick={stopMining}
+            disabled={!isMining}
+          >
             Stop Mining
           </button>
         </div>
@@ -165,7 +186,11 @@ const MiningGame = () => {
         <h2 className="text-xl font-semibold mb-4">Energy Items</h2>
         <div className="flex space-x-4">
           {energyItems.map((item) => (
-            <button key={item.name} className="bg-purple-500 text-white py-2 px-4 rounded-lg" onClick={() => buyEnergyItem(item)}>
+            <button
+              key={item.name}
+              className="bg-purple-500 text-white py-2 px-4 rounded-lg"
+              onClick={() => buyEnergyItem(item)}
+            >
               {item.name} - Restore {item.restore} - Cost: {item.cost}
             </button>
           ))}
@@ -181,7 +206,10 @@ const MiningGame = () => {
               <p>
                 {tool.name} - Power: {tool.power} - Cost: {tool.cost}
               </p>
-              <button className="bg-green-500 text-white py-2 px-4 rounded-lg" onClick={() => purchaseMiningTool(tool)}>
+              <button
+                className="bg-green-500 text-white py-2 px-4 rounded-lg"
+                onClick={() => purchaseMiningTool(tool)}
+              >
                 Purchase
               </button>
             </div>
